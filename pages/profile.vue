@@ -1,11 +1,11 @@
 <template>
   <div class="profile">
-    <h1>This is an profile page</h1>
+    <h1>This is the profile page for {{ profileName }}</h1>
     <div class="notes-screen">
       <button @click="createNew">Create New</button>
     </div>
     <div class="display-notes" v-for="(todo, index) in todoList" :key="index">
-      {{ todo.notesId }}
+      {{ todo.id }}
       <input placeholder="title" type="text" v-model="todo.title" />
       <input placeholder="text" type="text" v-model="todo.text" />
       <button @click="addTodo(todo)" class="save">save</button>
@@ -23,6 +23,7 @@ export default {
     return {
       id: 'signIn',
       todoList: [],
+      profileName: '',
     }
   },
   meta: {
@@ -31,6 +32,7 @@ export default {
   mounted() {
     Auth.currentAuthenticatedUser()
       .then((data) => {
+        this.profileName = data?.attributes?.email
         this.id = data.username
         API.get('amplifyNuxtNotes', `/notes/${data.username}`, {}).then(
           (result) => {
@@ -44,10 +46,11 @@ export default {
   },
   methods: {
     addTodo: function (item) {
+      console.log(item)
       API.post('amplifyNuxtNotes', `/notes`, {
         body: {
-          userId: item.userId,
-          notesId: item.notesId.toString(),
+          userid: item.userid,
+          id: item.id.toString(),
           title: item.title,
           text: item.text,
         },
@@ -56,28 +59,25 @@ export default {
       })
     },
     deleteTodo: function (item) {
+      console.log(item)
       console.log(`deleteTodo-${item.id}`)
-      API.del(
-        'amplifyNuxtNotes',
-        `/notes/object/${item.userId}/${item.notesId}`,
-        {}
-      )
+      API.del('amplifyNuxtNotes', `/notes/object/${item.userid}/${item.id}`, {})
         .then((result) => {
-          this.todoList = this.todoList.filter(
-            (note) => note.notesId !== item.notesId
-          )
+          this.todoList = this.todoList.filter((note) => note.id !== item.id)
         })
         .catch((err) => {
           console.log(err)
         })
     },
     createNew() {
-      const newIndex = Math.max(...this.todoList.map((item) => item.notesId))
+      const newIndex = this.todoList.length
+        ? Math.max(...this.todoList.map((item) => item.id))
+        : 0
       const newItem = {
-        notesId: newIndex + 1,
+        id: newIndex + 1,
         title: '',
         text: '',
-        userId: this.id,
+        userid: this.id,
       }
       this.todoList.push(newItem)
     },

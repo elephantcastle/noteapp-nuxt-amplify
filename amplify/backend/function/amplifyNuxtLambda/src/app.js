@@ -147,7 +147,7 @@ app.get(path + '/object' + sortKeyPath + hashKeyPath, function (req, res) {
 
 app.put(path, function (req, res) {
   if (userIdPresent) {
-    req.body['userId'] =
+    req.body['userid'] =
       req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH
   }
 
@@ -171,7 +171,7 @@ app.put(path, function (req, res) {
 
 app.post(path, function (req, res) {
   if (userIdPresent) {
-    req.body['userId'] =
+    req.body['userid'] =
       req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH
   }
 
