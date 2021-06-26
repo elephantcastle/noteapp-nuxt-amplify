@@ -1,0 +1,7 @@
+{
+    "tableName": "amplifyNuxtTable",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "userid",
+    "sortKeyType": "S"
+}
