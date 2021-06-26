@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-oceannuxt-dev-162004-authRole",
+      "UnauthRoleArn": "arn:aws:iam::848510564231:role/amplify-oceannuxt-dev-162004-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::848510564231:role/amplify-oceannuxt-dev-162004-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-oceannuxt-dev-162004-deployment",
+      "UnauthRoleName": "amplify-oceannuxt-dev-162004-unauthRole",
+      "StackName": "amplify-oceannuxt-dev-162004",
+      "StackId": "arn:aws:cloudformation:us-east-1:848510564231:stack/amplify-oceannuxt-dev-162004/f3d70890-d691-11eb-a6ca-0e65f7e0e97d",
+      "AmplifyAppId": "d2v4hx853t47ug"
+    }
+  }
+}
