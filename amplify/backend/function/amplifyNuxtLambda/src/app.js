@@ -56,7 +56,7 @@ const convertUrlType = (param, type) => {
  * HTTP Get method for list objects *
  ********************************/
 
-app.get(path + hashKeyPath, function (req, res) {
+app.get(path + sortKeyPath, function (req, res) {
   var condition = {}
   condition[partitionKeyName] = {
     ComparisonOperator: 'EQ',
@@ -96,7 +96,7 @@ app.get(path + hashKeyPath, function (req, res) {
  * HTTP Get method for get single object *
  *****************************************/
 
-app.get(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
+app.get(path + '/object' + sortKeyPath + hashKeyPath, function (req, res) {
   var params = {}
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] =
@@ -193,7 +193,7 @@ app.post(path, function (req, res) {
  * HTTP remove method to delete object *
  ***************************************/
 
-app.delete(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
+app.delete(path + '/object' + sortKeyPath + hashKeyPath, function (req, res) {
   var params = {}
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] =

@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "oceannuxtfdcd9a8c": {}
+      },
+      "function": {
+        "amplifyNuxtLambda": {
+          "deploymentBucketName": "amplify-oceannuxt-dev-162004-deployment",
+          "s3Key": "amplify-builds/amplifyNuxtLambda-68636a76776e77314e53-build.zip"
+        }
       }
     }
   }
