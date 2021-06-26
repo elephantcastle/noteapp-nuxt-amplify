@@ -10,6 +10,11 @@
       "StackName": "amplify-oceannuxt-dev-162004",
       "StackId": "arn:aws:cloudformation:us-east-1:848510564231:stack/amplify-oceannuxt-dev-162004/f3d70890-d691-11eb-a6ca-0e65f7e0e97d",
       "AmplifyAppId": "d2v4hx853t47ug"
+    },
+    "categories": {
+      "auth": {
+        "oceannuxtfdcd9a8c": {}
+      }
     }
   }
 }
