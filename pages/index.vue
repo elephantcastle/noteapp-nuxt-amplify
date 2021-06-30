@@ -1,7 +1,7 @@
 <template>
   <div>
     <Logo />
-    <h1 class="title">ocean-nuxt</h1>
+    <h1 class="title">noteapp-nuxt-amplify</h1>
   </div>
 </template>
 

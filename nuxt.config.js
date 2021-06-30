@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ocean-nuxt',
+    title: 'noteapp-nuxt-amplify',
     htmlAttrs: {
       lang: 'en',
     },

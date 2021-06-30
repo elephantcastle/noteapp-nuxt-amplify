@@ -1,4 +1,4 @@
-# ocean-nuxt
+# noteapp-nuxt-amplify
 
 ## Build Setup
 
